@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  # APPLICATION
+  api:
+    image: fantaso/flask-image-rest-api
+    container_name: flask-image-rest-api
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    labels:
+      /api: "Flask and flask restful endpoints"
+    command: python manage.py runserver
+    volumes:
+      - ./src:/flask-app
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_HOST=${MONGODB_HOST}
