@@ -1,4 +1,5 @@
 from mongoengine import register_connection
+import os
 
 
 ##########################################################
@@ -31,9 +32,9 @@ APP_CONFIG = {
 ##########################################################
 ##########   MONGO DB AND MONGOENGINE SETTINGS  ##########
 MONGODB_HOST = {
-    'development': 'mongodb+srv://fantaso:cmmaran1986@cluster0-rjehl.mongodb.net/test?retryWrites=true',
-    'production': 'mongodb+srv://fantaso:cmmaran1986@cluster0-rjehl.mongodb.net/test?retryWrites=true',
-    'testing': 'mongodb+srv://fantaso:cmmaran1986@cluster0-rjehl.mongodb.net/test?retryWrites=true',
+    'development': os.environ.get('MONGODB_HOST'),
+    'production': os.environ.get('MONGODB_HOST'),
+    'testing': os.environ.get('MONGODB_HOST'),
 }
 
 

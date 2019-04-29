@@ -7,7 +7,7 @@ app_env = 'development'
 app = create_app(app_env)
 
 manager = Manager(app=app)
-manager.add_command('runserver', Server(host='127.0.0.1', port=8000))
+manager.add_command('runserver', Server(host='0.0.0.0', port=8000))
 
 
 if __name__ == '__main__':
