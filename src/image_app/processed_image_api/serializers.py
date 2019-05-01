@@ -5,8 +5,8 @@ from .models import ImageDocument, ImageOutputDocument
 
 class ImageOutputSerializer(Schema):
     probability = fields.Float(allow_nan=False,  required=False)
-    label = fields.String(default='default-data', attribute='label', required=True)
-    result = fields.String(default='default-data', attribute='result', required=True)
+    label = fields.String(required=True)
+    result = fields.String(required=True)
     bbox = fields.List(fields.Float(allow_nan=False),  required=False)
 
     class Meta:
@@ -23,10 +23,10 @@ class ImageSerializer(Schema):
     imagePath = fields.String(required=True)
     imageId = fields.String(required=True)
     output = fields.Nested(ImageOutputSerializer, many=True, required=True)
-    weak = fields.Method('get_weak')
+    weak = fields.Method('get_weak', dump_only=True)
 
     class Meta:
-        fields = ("status", "imagePath", "imageId", 'weak', "output")
+        fields = ('status', 'imagePath', 'imageId', 'output', 'weak')
         ordered = True
 
     def get_weak(self, obj):

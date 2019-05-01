@@ -31,7 +31,7 @@ class ImagesView(Resource):
         # deserialize all images database objects to serializable data
         # send the result with 200 OK HTTP
         images = ImageDocument.objects.all()
-        result = ImageSerializer(many=True).dump(images).data
+        result = ImageSerializer(many=True, exclude=('weak',)).dump(images).data
         return result, 200
 
     # Create
@@ -68,7 +68,7 @@ class ImagesView(Resource):
 
         # retrieve image created and serialize it to send it back
         obj_image = ImageDocument.objects(id=image.id).first()
-        ser_image = ImageSerializer().dump(obj_image)
+        ser_image = ImageSerializer(exclude=('weak',)).dump(obj_image)
 
         return ser_image.data, 202
 
@@ -131,7 +131,7 @@ class ImageView(Resource):
 
         # retrieve image created and serialize it to send it back
         obj_image = ImageDocument.objects(id=image.id).first()
-        ser_image = ImageSerializer().dump(obj_image)
+        ser_image = ImageSerializer(exclude=('weak',)).dump(obj_image)
 
         return ser_image.data, 200
 
