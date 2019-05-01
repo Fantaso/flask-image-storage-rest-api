@@ -22,6 +22,8 @@ Project consists to allow a embedded system to store a processed image ouput thr
 
 How Processed Image Api Works:
 - You send a HTTP POST request to the `/api/images/` endpoint with the `Document Image File` to be stored in Json format. A `Document Image file` looks like:
+
+
             {
                 "status":"complete" or "processing",
                 "imagePath":"date/image_name.jpg",
@@ -40,6 +42,7 @@ How Processed Image Api Works:
                     }
                 ]
             }
+
 
 - You send a HTTP GET request to retrieve a list of all images stored in the database at `/api/images/`.
 - Alternatively there are more endpoints to interact with the REST Api. See more below.
