@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "54e11744-874b-4276-87a8-9d58b5c1d98a",
+		"name": "Flask-image-storage-rest-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "image_api",
+			"item": [
+				{
+					"name": "images API root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								""
+							]
+						},
+						"description": "check if device is available"
+					},
+					"response": []
+				},
+				{
+					"name": "images list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/images/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images",
+								""
+							]
+						},
+						"description": "get the data to generate a username and password to be register on a POST request"
+					},
+					"response": []
+				},
+				{
+					"name": "images weak",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/images/weak/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images",
+								"weak",
+								""
+							]
+						},
+						"description": "get the data to generate a username and password to be register on a POST request"
+					},
+					"response": []
+				},
+				{
+					"name": "image create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"complete\",\n    \"imagePath\":\"20180907/1536311270718.jpg\",\n    \"imageId\":\"7\",\n    \"output\":[\n        {\n            \"bbox\":[\n                1008.8831787109375,\n                280.6226501464844,\n                1110.0245361328125,\n                380.72021484375\n            ],\n            \"probability\":0.56,\n            \"label\":\"nail\",\n            \"result\":\"good\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/images/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images",
+								""
+							]
+						},
+						"description": "degister a device from the client side"
+					},
+					"response": []
+				},
+				{
+					"name": "image retreive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/images/6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images",
+								"6",
+								""
+							]
+						},
+						"description": "get the data to generate a username and password to be register on a POST request"
+					},
+					"response": []
+				},
+				{
+					"name": "image output",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/images/5/output/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images",
+								"5",
+								"output",
+								""
+							]
+						},
+						"description": "get the data to generate a username and password to be register on a POST request"
+					},
+					"response": []
+				},
+				{
+					"name": "image update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"complete\",\n    \"imagePath\":\"20180907/1536311270718.jpg\",\n    \"imageId\":\"2\",\n    \"output\":[\n        {\n            \"bbox\":[\n                1.8831787109375,\n                280.6226501464844,\n                1110.0245361328125,\n                380.72021484375\n            ],\n            \"probability\":0.56,\n            \"label\":\"nail\",\n            \"result\":\"good\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/images/6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images",
+								"6",
+								""
+							]
+						},
+						"description": "get the data to generate a username and password to be register on a POST request"
+					},
+					"response": []
+				},
+				{
+					"name": "image delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/images/15363110718/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"images",
+								"15363110718",
+								""
+							]
+						},
+						"description": "get the data to generate a username and password to be register on a POST request"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "app root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				},
+				"description": "check if device is available"
+			},
+			"response": []
+		}
+	]
+}
