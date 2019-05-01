@@ -3,8 +3,8 @@ version: "3"
 services:
   # APPLICATION
   api:
-    image: fantaso/flask-image-rest-api
-    container_name: flask-image-rest-api
+    image: fantaso/flask-image-storage-rest-api
+    container_name: flask-image-storage-rest-api
     build:
       context: ./src
       dockerfile: Dockerfile
@@ -15,5 +15,5 @@ services:
       - ./src:/flask-app
     ports:
       - "8000:8000"
-    environment:
-      - MONGODB_HOST=${MONGODB_HOST}
+    # environment:
+    #   - MONGODB_HOST=${MONGODB_HOST}
