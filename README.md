@@ -37,7 +37,7 @@ How Processed Image Api Works:
                             40.44
                         ],
                         "probability":0.95,
-                        "label":"object_in_image_name",
+                        "label":"object_name_in_image",
                         "result":"verbose_name_of_probability"
                     }
                 ]
